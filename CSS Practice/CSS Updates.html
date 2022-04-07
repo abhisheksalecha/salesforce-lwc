@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>New CSS</title>
+        <style>
+            :root {
+                --bg1: repeating-conic-gradient(red 0 15deg,darkred 0 30deg);
+                --bg2: repeating-conic-gradient(darkred 0 15deg,red 0 30deg);
+            }
+            #div1{
+                background: radial-gradient(red, maroon, red, maroon, red, maroon, red, maroon);
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+            }
+            #div2{
+                background: conic-gradient(red 120deg, green 120deg 240deg, blue 240deg);
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+            }
+            #div3{
+                background: var(--bg1);
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                float: left;
+            }
+            #div4{
+                background: conic-gradient(white 0deg 100deg , black 100deg 101deg, white 101deg);
+                height: 200px;
+                width: 200px;
+                float: left;
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body onload="runTheWheel()">
+        <div id="div1"></div>
+        </br>
+        <div id="div2"></div>
+        </br>
+        <div>
+            <div id="div3"></div>
+                <table id="div4" cellspacing="0px">
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">10</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">9</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">8</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            
+        </div>
+    <script>
+        function runTheWheel(){
+            let cmp = document.getElementById('div4');
+            let rotate = true;
+            let myroot = document.documentElement;
+            console.log('This is ',getComputedStyle(myroot).getPropertyValue("--bg1"));
+            let start = 0;
+            let end = 0;
+            /*setInterval(function(){
+                console.log(cmp);
+                /*if(rotate){
+                    cmp.style.setProperty("background", getComputedStyle(myroot).getPropertyValue("--bg2"));
+                    rotate = false;
+                }else{
+                    cmp.style.setProperty("background", getComputedStyle(myroot).getPropertyValue("--bg1"));
+                    rotate = true;
+                }
+                cmp.style.setProperty("background", 'conic-gradient(black' + start +'deg ' + end + 'deg, white ' + end + 'deg)');
+                start += 1;
+                end += 1;
+            }, 200);*/
+        }
+    </script>    
+    </body>
+</html>
